@@ -4,6 +4,7 @@
 
 <script>
 import ListBlogs from './components/ListBlogs.vue'
+
 export default{
   components:{
     "list-blogs":ListBlogs,
