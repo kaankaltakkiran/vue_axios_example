@@ -3,6 +3,7 @@
     <div class="row justify-content-center mt-4">
    <div class="col-6">
   <h1 class="alert alert-primary  text-center">List Users</h1>
+  <input type="text" v-model="keyword" placeholder="Search user" />
   <p v-if="loading">Loading...</p>
 <div class="alert alert-danger " v-else-if="errored">An error occurred</div>
 </div>
@@ -16,9 +17,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="user in users" :key="user.id">
+    <tr v-for="user in filtredUsers" :key="user.id">
       <td>{{user.id}}</td>
-      <td>{{user.email}}</td>
+      <td>{{user.name}}</td>
       <td>{{user.email}}</td>
     </tr>
   </tbody>
@@ -33,10 +34,19 @@ export default{
   data(){
     return{
       users: [],
+      keyword: '',
       loading: true,
-      errored: false 
+      errored: false, 
       
     }
+  },
+  computed:{
+    filtredUsers(){
+      /*  tüm userları bul ve bu keyword ile filtrele */
+      return this.users.filter(user=>{
+        return user.name.toLowerCase().includes(this.keyword.toLowerCase());
+      })
+     }
   },
   created(){
     axios.get('https://jsonplaceholder.typicode.com/users')
