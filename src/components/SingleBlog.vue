@@ -43,10 +43,12 @@ created(){
   axios.get('https://jsonplaceholder.typicode.com/posts/'+this.id)
   .then(response=>{
     console.log(response);
+/*     gelen veriyi bloga ata */
     this.blog=response.data;
   })
   .catch(error=>{
     console.log(error);
+    
     this.errored = true;
   })
   .finally(()=>{

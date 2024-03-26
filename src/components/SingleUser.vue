@@ -6,7 +6,6 @@
   <p v-if="loading">Loading...</p>
 <div class="alert alert-danger " v-else-if="errored">An error occurred</div>
 </div>
-
   <table class="table table-striped">
   <thead>
     <tr>

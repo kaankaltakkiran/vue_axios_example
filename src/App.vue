@@ -4,6 +4,7 @@
 </template>
 
 <script>
+/* Component import */
 import ListBlogs from './components/ListBlogs.vue'
 import Header from './components/Header.vue'
 import ListUsers from './components/ListUsers.vue'

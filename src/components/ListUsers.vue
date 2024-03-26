@@ -19,7 +19,7 @@
   <tbody>
     <tr v-for="user in filtredUsers" :key="user.id">
       <td>{{user.id}}</td>
-      <td><router-link v-bind:to="'/users/'+user.id">{{user.name}}</router-link></td>
+      <td><router-link v-bind:to="'/user/'+user.id">{{user.name}}</router-link></td>
       <td>{{user.email}}</td>
     </tr>
   </tbody>
