@@ -19,7 +19,7 @@
   <tbody>
     <tr v-for="blog in filtredBlogs" :key="blog.id">
       <td>{{blog.id}}</td>
-      <td>{{blog.title}}</td>
+      <td><router-link v-bind:to="'/blog/'+blog.id">{{blog.title}}</router-link></td>
       <td>{{blog.body}}</td>
     </tr>
   </tbody>
