@@ -1,9 +1,8 @@
 <template>
-    <div class="container">
+      <div class="container">
     <div class="row justify-content-center mt-4">
    <div class="col-6">
-  <h1 class="alert alert-primary  text-center">List Users</h1>
-  <input type="text" v-model="keyword" placeholder="Search user" />
+  <h1 class="alert alert-primary  text-center">List User</h1>
   <p v-if="loading">Loading...</p>
 <div class="alert alert-danger " v-else-if="errored">An error occurred</div>
 </div>
@@ -17,9 +16,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="user in filtredUsers" :key="user.id">
+    <tr>
       <td>{{user.id}}</td>
-      <td><router-link v-bind:to="'/users/'+user.id">{{user.name}}</router-link></td>
+      <td>{{user.name}}</td>
       <td>{{user.email}}</td>
     </tr>
   </tbody>
@@ -33,26 +32,18 @@ import axios from 'axios'
 export default{
   data(){
     return{
-      users: [],
-      keyword: '',
+      user: {},
+  /*     routedan gelen id */
+      id: this.$route.params.id,
       loading: true,
-      errored: false, 
-      
+      errored: false
     }
   },
-  computed:{
-    filtredUsers(){
-      /*  tüm userları bul ve bu keyword ile filtrele */
-      return this.users.filter(user=>{
-        return user.name.toLowerCase().includes(this.keyword.toLowerCase());
-      })
-     }
-  },
   created(){
-    axios.get('https://jsonplaceholder.typicode.com/users')
+    axios.get('https://jsonplaceholder.typicode.com/users/'+this.id)
     .then(response=>{
       console.log(response);
-      this.users=response.data;
+      this.user=response.data;
     })
     .catch(error=>{
       console.log(error);
