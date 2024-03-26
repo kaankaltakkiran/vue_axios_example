@@ -1,4 +1,15 @@
-# axiox-example
+# axios-example
+Vue.js, **axiox** ile veri listeleme örneği. **Bootsrap** ve **vue-router** ile yapıldı. Paketler **npm** ile yüklendi.
+## Yararlandığım Kaynaklar
+Fake api için: [jsonplaceholder](https://jsonplaceholder.typicode.com/) kullandım.
+
+Bootsrap: [Bootstrap](https://www.npmjs.com/package/bootstrap) kullandım.
+
+Vue router: [Router](https://www.npmjs.com/package/vue-router) kullandım.
+
+Vue Axios:  [Axios](https://www.npmjs.com/package/vue-axios) kullandım.
+
+Axios Kaynak: [Axios Örnek](https://v2.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html?redirect=true) kullandım.
 
 This template should help get you started developing with Vue 3 in Vite.
 
